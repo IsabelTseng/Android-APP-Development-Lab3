@@ -23,10 +23,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import static java.lang.Double.POSITIVE_INFINITY;
-import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.fail;
 
 /**
@@ -52,7 +51,9 @@ public class CalculatorTest {
      */
     @Test
     public void powTwoPositive() {
-        fail("powTwoPositive() hasn't been implemented.");
+        double resultPow = mCalculator.mypow(2d, 1d);
+        assertThat(resultPow, is(equalTo(2d)));
+        //fail("powTwoPositive() hasn't been implemented.");
     }
 
     /**
@@ -60,7 +61,9 @@ public class CalculatorTest {
      */
     @Test
     public void powFirstNegative() {
-        fail("powFirstNegative() hasn't been implemented.");
+        double resultPow = mCalculator.mypow(-2d, 2d);
+        assertThat(resultPow, is(equalTo(4d)));
+        //fail("powFirstNegative() hasn't been implemented.");
     }
 
     /**
@@ -68,7 +71,9 @@ public class CalculatorTest {
      */
     @Test
     public void powSecondNegative() {
-        fail("powSecondNegative() hasn't been implemented.");
+        double resultPow = mCalculator.mypow(2d, -2d);
+        assertThat(resultPow, is(equalTo(0.25d)));
+        //fail("powSecondNegative() hasn't been implemented.");
     }
 
     /**
@@ -76,7 +81,9 @@ public class CalculatorTest {
      */
     @Test
     public void powFirstZeroSecondPositive() {
-        fail("powFirstZeroSecondPositive() hasn't been implemented.");
+        double resultPow = mCalculator.mypow(0d, 1d);
+        assertThat(resultPow, is(equalTo(0d)));
+        //fail("powFirstZeroSecondPositive() hasn't been implemented.");
     }
 
     /**
@@ -84,7 +91,9 @@ public class CalculatorTest {
      */
     @Test
     public void powSecondZero() {
-        fail("powSecondZero() hasn't been implemented.");
+        double resultAdd = mCalculator.mypow(1d, 0d);
+        assertThat(resultAdd, is(equalTo(1d)));
+        //fail("powSecondZero() hasn't been implemented.");
     }
 
     /**
@@ -92,7 +101,9 @@ public class CalculatorTest {
      */
     @Test
     public void powFirstZeroSecondMinus1() {
-        fail("powFirstZeroSecondMinus1() hasn't been implemented.");
+        double resultPow = mCalculator.mypow(0d, -1d);
+        assertThat(resultPow, is(equalTo(Double.POSITIVE_INFINITY)));
+        //fail("powFirstZeroSecondMinus1() hasn't been implemented.");
     }
 
     /**
@@ -100,7 +111,9 @@ public class CalculatorTest {
      */
     @Test
     public void powFirstMinusZeroSecondNegative() {
-        fail("powFirstMinusZeroSecondNegative() hasn't been implemented.");
+        double resultPow = mCalculator.mypow(-0d, -1d);
+        assertThat(resultPow, is(equalTo(Double.NEGATIVE_INFINITY)));
+        //fail("powFirstMinusZeroSecondNegative() hasn't been implemented.");
     }
 
 }
